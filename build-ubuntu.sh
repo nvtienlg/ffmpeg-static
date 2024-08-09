@@ -12,8 +12,10 @@ sudo apt-get -y --force-yes install \
   libfreetype6-dev \
   libopencore-amrnb-dev \
   libopencore-amrwb-dev \
-  libsdl1.2-dev \
+  libsdl2-dev \
   libspeex-dev \
+  libgnutls28-dev \
+  libmp3lame-dev \
   libssl-dev \
   libtheora-dev \
   libtool \
@@ -28,18 +30,12 @@ sudo apt-get -y --force-yes install \
   libxvidcore-dev \
   pkg-config \
   texi2html \
+  meson \
+  ninja-build \
+  texinfo \
+  wget \
+  yasm \
   zlib1g-dev
-
-# For 12.04
-# libx265 requires cmake version >= 2.8.8
-# 12.04 only have 2.8.7
-ubuntu_version=`lsb_release -rs`
-need_ppa=`echo $ubuntu_version'<=12.04' | bc -l`
-if [ $need_ppa -eq 1 ]; then
-    sudo add-apt-repository ppa:roblib/ppa
-    sudo apt-get update
-    sudo apt-get install cmake
-fi
 
 ./build.sh "$@"
 
