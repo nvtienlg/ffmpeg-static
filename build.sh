@@ -226,7 +226,7 @@ download \
 download \
   "release-2.30.6.tar.gz" \
   "SDL-2.30.6.tar.gz" \
-  "40aedb499cb2b6f106d909d9d97f869a" \
+  "nil" \
   "https://github.com/libsdl-org/SDL/archive/refs/tags/"
 
 [ $download_only -eq 1 ] && exit 0
