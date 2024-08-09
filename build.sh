@@ -4,7 +4,7 @@ set -e
 set -u
 
 jflag=
-jval=2
+jval=4
 rebuild=0
 download_only=0
 uname -mpi | grep -qE 'x86|i386|i686' && is_x86=1 || is_x86=0
@@ -85,83 +85,83 @@ cd $BUILD_DIR
   "http://www.tortall.net/projects/yasm/releases/"
 
 [ $is_x86 -eq 1 ] && download \
-  "nasm-2.15.05.tar.bz2" \
+  "nasm-2.16.03.tar.gz" \
   "" \
-  "b8985eddf3a6b08fc246c14f5889147c" \
-  "https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/"
+  "nil" \
+  "https://www.nasm.us/pub/nasm/releasebuilds/2.16.03/"
 
 download \
-  "OpenSSL_1_0_2o.tar.gz" \
+  "openssl-3.3.1.tar.gz" \
   "" \
-  "5b5c050f83feaa0c784070637fac3af4" \
-  "https://github.com/openssl/openssl/archive/"
+  "nil" \
+  "https://github.com/openssl/openssl/releases/download/openssl-3.3.1/"
 
 download \
-  "v1.2.11.tar.gz" \
-  "zlib-1.2.11.tar.gz" \
-  "0095d2d2d1f3442ce1318336637b695f" \
-  "https://github.com/madler/zlib/archive/"
+  "zlib-1.3.1.tar.gz" \
+  "" \
+  "nil" \
+  "https://github.com/madler/zlib/releases/download/v1.3.1/"
 
 download \
   "v1.5.3.tar.gz" \
-  "" \
-  "df8213a3669dd846ddaad0fa1e9f417b" \
+  "srt-1.5.3.tar.gz" \
+  "nil" \
   "https://github.com/Haivision/srt/archive/refs/tags/"
 
 download \
-  "x264-stable.tar.gz" \
+  "x264-master.tar.gz" \
   "" \
   "nil" \
-  "https://code.videolan.org/videolan/x264/-/archive/stable/"
+  "https://code.videolan.org/videolan/x264/-/archive/master/"
 
 download \
-  "x265_3.4.tar.gz" \
-  "" \
-  "e37b91c1c114f8815a3f46f039fe79b5" \
-  "http://download.openpkg.org/components/cache/x265/"
+  "master.tar.gz" \
+  "x265-master.tar.gz" \
+  "nil" \
+  "https://bitbucket.org/multicoreware/x265_git/get/"
 
 download \
-  "v0.1.6.tar.gz" \
+  "v2.0.3.tar.gz" \
   "fdk-aac.tar.gz" \
-  "223d5f579d29fb0d019a775da4e0e061" \
-  "https://github.com/mstorsjo/fdk-aac/archive"
+  "nil" \
+  "https://github.com/mstorsjo/fdk-aac/archive/refs/tags/"
 
 # libass dependency
 download \
-  "harfbuzz-1.4.6.tar.bz2" \
+  "harfbuzz-2.6.7.tar.xz" \
   "" \
-  "e246c08a3bac98e31e731b2a1bf97edf" \
+  "nil" \
   "https://www.freedesktop.org/software/harfbuzz/release/"
 
 download \
-  "fribidi-1.0.2.tar.bz2" \
-  "" \
-  "bd2eb2f3a01ba11a541153f505005a7b" \
-  "https://github.com/fribidi/fribidi/releases/download/v1.0.2/"
-
-download \
-  "0.13.6.tar.gz" \
-  "libass-0.13.6.tar.gz" \
+  "v1.0.15.tar.gz" \
+  "fribidi-1.0.15.tar.gz" \
   "nil" \
-  "https://github.com/libass/libass/archive/"
+  "https://github.com/fribidi/fribidi/archive/refs/tags/"
 
 download \
-  "lame-3.99.5.tar.gz" \
+  "0.17.3.tar.gz" \
+  "libass-0.17.3.tar.gz" \
+  "nil" \
+  "https://github.com/libass/libass/archive/refs/tags/"
+
+download \
+  "lame-3.100.tar.gz" \
   "" \
-  "84835b313d4a8b68f5349816d33e07ce" \
-  "http://downloads.sourceforge.net/project/lame/lame/3.99"
+  "nil" \
+  "http://downloads.sourceforge.net/project/lame/lame/3.100"
 
 download \
-  "opus-1.1.2.tar.gz" \
-  "" \
-  "1f08a661bc72930187893a07f3741a91" \
-  "https://github.com/xiph/opus/releases/download/v1.1.2"
+  "v1.5.2.tar.gz" \
+  "opus-1.5.2.tar.gz" \
+  "nil" \
+  "https://github.com/xiph/opus/archive/refs/tags/"
 
 download \
-  "v1.6.1.tar.gz" \
-  "vpx-1.6.1.tar.gz" \
-  "b0925c8266e2859311860db5d76d1671" \
-  "https://github.com/webmproject/libvpx/archive"
+  "v1.14.1.tar.gz" \
+  "vpx-1.14.1.tar.gz" \
+  "nil" \
+  "https://github.com/webmproject/libvpx/archive/refs/tags/"
 
 download \
   "rtmpdump-2.3.tgz" \
@@ -170,64 +170,64 @@ download \
   "https://rtmpdump.mplayerhq.hu/download/"
 
 download \
-  "soxr-0.1.2-Source.tar.xz" \
+  "soxr-0.1.3-Source.tar.xz" \
   "" \
-  "0866fc4320e26f47152798ac000de1c0" \
+  "nil" \
   "https://sourceforge.net/projects/soxr/files/"
 
 download \
-  "release-0.98b.tar.gz" \
-  "vid.stab-release-0.98b.tar.gz" \
-  "299b2f4ccd1b94c274f6d94ed4f1c5b8" \
-  "https://github.com/georgmartius/vid.stab/archive/"
+  "v1.1.1.tar.gz" \
+  "vid.stab-1.1.1.tar.gz" \
+  "nil" \
+  "https://github.com/georgmartius/vid.stab/archive/refs/tags/"
 
 download \
-  "release-2.7.4.tar.gz" \
-  "zimg-release-2.7.4.tar.gz" \
-  "1757dcc11590ef3b5a56c701fd286345" \
-  "https://github.com/sekrit-twc/zimg/archive/"
+  "release-3.0.5.tar.gz" \
+  "zimg-3.0.5.tar.gz" \
+  "nil" \
+  "https://github.com/sekrit-twc/zimg/archive/refs/tags/"
 
 download \
-  "v2.1.2.tar.gz" \
-  "openjpeg-2.1.2.tar.gz" \
-  "40a7bfdcc66280b3c1402a0eb1a27624" \
-  "https://github.com/uclouvain/openjpeg/archive/"
+  "v2.5.2.tar.gz" \
+  "openjpeg-2.5.2.tar.gz" \
+  "nil" \
+  "https://github.com/uclouvain/openjpeg/archive/refs/tags/"
 
 download \
-  "v0.6.1.tar.gz" \
-  "libwebp-0.6.1.tar.gz" \
-  "1c3099cd2656d0d80d3550ee29fc0f28" \
-  "https://github.com/webmproject/libwebp/archive/"
+  "v1.4.0.tar.gz" \
+  "libwebp-1.4.0.tar.gz" \
+  "nil" \
+  "https://github.com/webmproject/libwebp/archive/refs/tags/"
 
 download \
-  "v1.3.6.tar.gz" \
-  "vorbis-1.3.6.tar.gz" \
-  "03e967efb961f65a313459c5d0f4cbfb" \
-  "https://github.com/xiph/vorbis/archive/"
+  "v1.3.7.tar.gz" \
+  "vorbis-1.3.7.tar.gz" \
+  "nil" \
+  "https://github.com/xiph/vorbis/archive/refs/tags/"
 
 download \
-  "v1.3.3.tar.gz" \
-  "ogg-1.3.3.tar.gz" \
-  "b8da1fe5ed84964834d40855ba7b93c2" \
-  "https://github.com/xiph/ogg/archive/"
+  "v1.3.5.tar.gz" \
+  "ogg-1.3.5.tar.gz" \
+  "nil" \
+  "https://github.com/xiph/ogg/archive/refs/tags/"
 
 download \
-  "Speex-1.2.0.tar.gz" \
-  "Speex-1.2.0.tar.gz" \
-  "4bec86331abef56129f9d1c994823f03" \
-  "https://github.com/xiph/speex/archive/"
+  "Speex-1.2.1.tar.gz" \
+  "" \
+  "nil" \
+  "https://github.com/xiph/speex/archive/refs/tags/"
 
 download \
-  "n6.0.tar.gz" \
-  "ffmpeg6.0.tar.gz" \
-  "586ca7cc091d26fd0a4c26308950ca51" \
-  "https://github.com/FFmpeg/FFmpeg/archive"
+  "ffmpeg-snapshot.tar.gz" \
+  "" \
+  "nil" \
+  "https://ffmpeg.org/releases/"
 
 download \
-  "SDL2-2.0.22.tar.gz" \
-  "SDL2-2.0.22.tar.gz" \
+  "release-2.30.6.tar.gz" \
+  "SDL-2.30.6.tar.gz" \
   "40aedb499cb2b6f106d909d9d97f869a" \
-  "https://github.com/libsdl-org/SDL/releases/download/release-2.0.22"
+  "https://github.com/libsdl-org/SDL/archive/refs/tags/"
 
 [ $download_only -eq 1 ] && exit 0
 
