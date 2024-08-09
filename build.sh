@@ -218,7 +218,7 @@ download \
   "https://github.com/xiph/speex/archive/refs/tags/"
 
 download \
-  "ffmpeg-snapshot.tar.gz" \
+  "ffmpeg-snapshot.tar.bz2" \
   "" \
   "nil" \
   "https://ffmpeg.org/releases/"
