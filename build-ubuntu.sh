@@ -34,7 +34,6 @@ sudo apt-get -y --force-yes install \
   ninja-build \
   texinfo \
   wget \
-  yasm \
   zlib1g-dev
 
 ./build.sh "$@"
